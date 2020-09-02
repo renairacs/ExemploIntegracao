@@ -21,7 +21,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'mkdir c:\a\1\MobEAD' 
+    script: 'mkdir d:\a\1\MobEAD' 
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
 
@@ -34,7 +34,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DeployIisAppPath="Default Web Site" /p:DesktopBuildPackageLocation="c:\a\1\mobEAD"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DeployIisAppPath="Default Web Site" /p:DesktopBuildPackageLocation="d:\a\1\mobEAD"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -53,4 +53,4 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     artifactName: 'MobEAD'
-    pathToPublish: 'c:\a\1\a'
+    pathToPublish: 'd:\a\1\a'
